@@ -39,6 +39,7 @@ jobs:
       Python37:
         python.version: '3.7'
 
+
   steps:
   - bash: echo "##vso[task.prependpath]$CONDA/bin"
     displayName: Add conda to PATH
@@ -47,6 +48,7 @@ jobs:
     displayName: Create Anaconda environment
 
   - bash: |
+      hwprefs cpu_count
       source activate myEnvironment
       conda install --yes --quiet --name myEnvironment python=$PYTHON_VERSION numpy
       pip install pytest pytest-azurepipelines
