@@ -48,7 +48,6 @@ jobs:
     displayName: Create Anaconda environment
 
   - bash: |
-      hwprefs cpu_count
       source activate myEnvironment
       conda install --yes --quiet --name myEnvironment python=$PYTHON_VERSION numpy
       pip install pytest pytest-azurepipelines
